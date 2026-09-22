@@ -142,6 +142,7 @@
                   {{- 'products.product.on_sale' | t -}}
                 </span>
               {%- endif -%}
+              {%- render 'product-tag-badges', product: card_product -%}
             </div>
           </div>
         </div>
@@ -566,6 +567,7 @@
                 {{- 'products.product.on_sale' | t -}}
               </span>
             {%- endif -%}
+            {%- render 'product-tag-badges', product: card_product -%}
           </div>
         </div>
       </div>

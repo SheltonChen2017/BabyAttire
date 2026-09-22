@@ -26,6 +26,18 @@
             "show_gift_card_recipient": true
           }
         },
+        "trust_icons": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "leaf",
+            "heading_1": "Soft on skin",
+            "icon_2": "truck",
+            "heading_2": "Free shipping over $50",
+            "icon_3": "return",
+            "heading_3": "30-day returns"
+          }
+        },
         "description": {
           "type": "description"
         },
@@ -77,6 +89,7 @@
         "size_guide",
         "quantity_selector",
         "buy_buttons",
+        "trust_icons",
         "description",
         "fabric_care",
         "safety",

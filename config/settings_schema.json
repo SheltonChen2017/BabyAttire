@@ -1263,6 +1263,13 @@
         "id": "sold_out_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
         "default": "scheme-3"
+      },
+      {
+        "type": "color_scheme",
+        "id": "tag_badge_color_scheme",
+        "label": "Tag badge color scheme",
+        "info": "For badges added with product tags like badge:Organic cotton.",
+        "default": "scheme-4"
       }
     ]
   },

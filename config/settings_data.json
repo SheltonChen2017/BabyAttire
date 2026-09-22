@@ -156,6 +156,7 @@
       "badge_corner_radius": 40,
       "sale_badge_color_scheme": "scheme-5",
       "sold_out_badge_color_scheme": "scheme-2",
+      "tag_badge_color_scheme": "scheme-4",
       "brand_headline": "Soft clothes for tiny humans",
       "brand_description": "<p>Gentle, breathable baby clothing from newborn to 24 months.</p>",
       "brand_image_width": 100,

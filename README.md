@@ -11,7 +11,8 @@ free theme, and customized for a baby clothing shop.
 | Colors and shapes | Soft pastel color schemes (cream, blush pink, sage, dusty blue) with rounded buttons, cards and images. |
 | Announcement bar | Rotating messages about shipping and returns. |
 | Homepage | Hero banner, "Shop by age" collections, new arrivals, "Why parents love BabyAttire", gift sets, a parent FAQ and a newsletter signup. |
-| Product page | Size guide link under the size picker, plus "Fabric & care", "Made for little ones" and "Shipping & returns" tabs. |
+| Product page | Size guide link under the size picker, reassurance icons under the buy buttons, plus "Fabric & care", "Made for little ones" and "Shipping & returns" tabs. |
+| Product badges | Tag a product `badge:Organic cotton` (or any text after `badge:`) to show that badge on product cards and the product page. |
 | Size guide page | New `size-chart` section with an editable baby size table in pounds, inches, kilograms and centimeters. |
 | Cart | Opens as a side drawer, with a free shipping progress bar and a gift message box. |
 | Footer | Brand blurb, "Shop" and "Help" menus, a contact prompt and a newsletter signup. |
@@ -88,9 +89,12 @@ Then finish these steps in the Shopify admin:
   and your policy pages.
 - **Free shipping.** The cart's progress bar is set to $50 in **Theme settings > Cart**.
   Set up a matching free shipping rate in **Settings > Shipping and delivery**.
+- **Badges (optional).** In a product's **Tags** field, add tags like `badge:New`
+  or `badge:Organic cotton`. Up to two show per product. Change their color in
+  **Theme settings > Badges**.
 - **Images.** Add a hero image and a logo in the theme editor.
 - **Policies.** The theme mentions free shipping over $50, 30-day returns and
-  1-2 day order processing (in the announcement bar, homepage and FAQ page).
+  1-2 day order processing (in the announcement bar, homepage, product page and FAQ page).
   Change that text to match your real shipping and return policies before you launch.
 
 ## Updating the theme later

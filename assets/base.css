@@ -3672,3 +3672,18 @@ details-disclosure > details {
 .free-shipping-bar--unlocked .free-shipping-bar__message {
   font-weight: 600;
 }
+
+/* BabyAttire: tag badges (snippets/product-tag-badges.liquid) */
+.card__badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.card__badge.right {
+  justify-content: flex-end;
+}
+
+.product__title > .badge--tag {
+  margin: 1rem 0.4rem 0 0;
+}

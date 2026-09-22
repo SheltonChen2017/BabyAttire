@@ -1,0 +1,30 @@
+{% comment %}
+  BabyAttire product badges from tags.
+  Add a tag like "badge:Organic cotton" or "badge:New" to a product in the
+  Shopify admin and it shows as a badge on product cards and the product page.
+  Shows at most two badges, in tag order.
+
+  Accepts:
+  - product: {Object} Product to read tags from
+  - limit: {Number} Maximum badges to show (optional, default 2)
+
+  Usage:
+  {% render 'product-tag-badges', product: card_product %}
+{% endcomment %}
+
+{%- liquid
+  assign max_badges = limit | default: 2
+  assign shown = 0
+-%}
+{%- for tag in product.tags -%}
+  {%- assign tag_prefix = tag | slice: 0, 6 | downcase -%}
+  {%- if tag_prefix == 'badge:' and shown < max_badges -%}
+    {%- assign label = tag | slice: 6, 200 | strip -%}
+    {%- if label != blank -%}
+      <span class="badge badge--tag color-{{ settings.tag_badge_color_scheme }}">
+        {{- label | escape -}}
+      </span>
+      {%- assign shown = shown | plus: 1 -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
