@@ -1,0 +1,213 @@
+{% comment %}
+  BabyAttire size chart.
+  Each row is a block, so the store owner can edit sizes in the theme editor.
+  Used on the Size guide page (templates/page.size-guide.json) and can be
+  added to any page from the theme editor.
+{% endcomment %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .size-chart__table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 2rem;
+    border-radius: var(--text-boxes-radius);
+  }
+
+  .size-chart__table {
+    width: 100%;
+    min-width: 52rem;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+  }
+
+  .size-chart__table caption {
+    text-align: left;
+    padding-bottom: 1rem;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .size-chart__table th,
+  .size-chart__table td {
+    padding: 1.2rem 1.4rem;
+    text-align: left;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  }
+
+  .size-chart__table thead th {
+    background: rgba(var(--color-foreground), 0.06);
+    font-weight: 600;
+  }
+
+  .size-chart__table tbody tr:nth-child(even) {
+    background: rgba(var(--color-foreground), 0.03);
+  }
+
+  .size-chart__note {
+    margin-top: 2rem;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <div class="rte">{{ section.settings.intro }}</div>
+    {%- endif -%}
+
+    <div class="size-chart__table-wrapper">
+      <table class="size-chart__table">
+        <caption class="visually-hidden">{{ section.settings.heading | escape }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ section.settings.label_size | escape }}</th>
+            <th scope="col">{{ section.settings.label_age | escape }}</th>
+            <th scope="col">{{ section.settings.label_weight | escape }}</th>
+            <th scope="col">{{ section.settings.label_height | escape }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}>
+              <th scope="row">{{ block.settings.size | escape }}</th>
+              <td>{{ block.settings.age | escape }}</td>
+              <td>{{ block.settings.weight | escape }}</td>
+              <td>{{ block.settings.height | escape }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <div class="size-chart__note rte">{{ section.settings.note }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Size chart",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Baby size chart"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>Babies grow at their own pace, so choose by weight and height first and age second.</p>"
+    },
+    {
+      "type": "text",
+      "id": "label_size",
+      "label": "Size column title",
+      "default": "Size"
+    },
+    {
+      "type": "text",
+      "id": "label_age",
+      "label": "Age column title",
+      "default": "Age"
+    },
+    {
+      "type": "text",
+      "id": "label_weight",
+      "label": "Weight column title",
+      "default": "Weight"
+    },
+    {
+      "type": "text",
+      "id": "label_height",
+      "label": "Height column title",
+      "default": "Height"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note below the chart",
+      "default": "<p>Between sizes? Size up. Our cotton is pre-washed, but a little extra room means more months of wear.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Size row",
+      "settings": [
+        { "type": "text", "id": "size", "label": "Size", "default": "0-3M" },
+        { "type": "text", "id": "age", "label": "Age", "default": "0 to 3 months" },
+        { "type": "text", "id": "weight", "label": "Weight", "default": "8-12 lb / 3.6-5.4 kg" },
+        { "type": "text", "id": "height", "label": "Height", "default": "21-24 in / 53-61 cm" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size chart",
+      "blocks": [
+        { "type": "row", "settings": { "size": "Newborn", "age": "Up to 1 month", "weight": "5-8 lb / 2.3-3.6 kg", "height": "17-21 in / 43-53 cm" } },
+        { "type": "row", "settings": { "size": "0-3M", "age": "0 to 3 months", "weight": "8-12 lb / 3.6-5.4 kg", "height": "21-24 in / 53-61 cm" } },
+        { "type": "row", "settings": { "size": "3-6M", "age": "3 to 6 months", "weight": "12-16 lb / 5.4-7.3 kg", "height": "24-27 in / 61-69 cm" } },
+        { "type": "row", "settings": { "size": "6-12M", "age": "6 to 12 months", "weight": "16-24 lb / 7.3-10.9 kg", "height": "27-30 in / 69-76 cm" } },
+        { "type": "row", "settings": { "size": "12-18M", "age": "12 to 18 months", "weight": "24-28 lb / 10.9-12.7 kg", "height": "30-32 in / 76-81 cm" } },
+        { "type": "row", "settings": { "size": "18-24M", "age": "18 to 24 months", "weight": "28-32 lb / 12.7-14.5 kg", "height": "32-34 in / 81-86 cm" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

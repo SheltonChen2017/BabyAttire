@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "size_chart": {
+      "type": "size-chart",
+      "blocks": {
+        "row_0": {
+          "type": "row",
+          "settings": {
+            "size": "Newborn",
+            "age": "Up to 1 month",
+            "weight": "5-8 lb / 2.3-3.6 kg",
+            "height": "17-21 in / 43-53 cm"
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "size": "0-3M",
+            "age": "0 to 3 months",
+            "weight": "8-12 lb / 3.6-5.4 kg",
+            "height": "21-24 in / 53-61 cm"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "size": "3-6M",
+            "age": "3 to 6 months",
+            "weight": "12-16 lb / 5.4-7.3 kg",
+            "height": "24-27 in / 61-69 cm"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "size": "6-12M",
+            "age": "6 to 12 months",
+            "weight": "16-24 lb / 7.3-10.9 kg",
+            "height": "27-30 in / 69-76 cm"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "size": "12-18M",
+            "age": "12 to 18 months",
+            "weight": "24-28 lb / 10.9-12.7 kg",
+            "height": "30-32 in / 76-81 cm"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "size": "18-24M",
+            "age": "18 to 24 months",
+            "weight": "28-32 lb / 12.7-14.5 kg",
+            "height": "32-34 in / 81-86 cm"
+          }
+        }
+      },
+      "block_order": [
+        "row_0",
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5"
+      ],
+      "settings": {
+        "heading": "Baby size chart",
+        "heading_size": "h1",
+        "intro": "<p>Babies grow at their own pace, so choose by weight and height first and age second.</p>",
+        "label_size": "Size",
+        "label_age": "Age",
+        "label_weight": "Weight",
+        "label_height": "Height",
+        "note": "<p>Between sizes? Size up. Our cotton is pre-washed, but a little extra room means more months of wear.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "size_chart"
+  ]
+}
