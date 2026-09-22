@@ -69,7 +69,9 @@ export const Q = {
     }`,
   onlineStorePublication: `
     query Publications {
-      publications(first: 25) { nodes { id catalog { title } } }
+      publications(first: 25) {
+        nodes { id catalog { title } channels(first: 5) { nodes { name handle } } }
+      }
     }`,
   publish: `
     mutation Publish($id: ID!, $input: [PublicationInput!]!) {
@@ -327,7 +329,10 @@ async function ensureShopImages(gql, catalog, base, dry) {
 
 async function onlineStoreId(gql) {
   const data = await gql(Q.onlineStorePublication);
-  const match = data.publications.nodes.find((p) => /online store/i.test(p.catalog?.title || ''));
+  const isOnlineStore = (p) =>
+    /online store/i.test(p.catalog?.title || '') ||
+    p.channels?.nodes.some((c) => /online store/i.test(c.name) || c.handle === 'online_store');
+  const match = data.publications.nodes.find(isOnlineStore);
   if (!match) throw new Error('Could not find the Online Store sales channel. Is it installed on this store?');
   return match.id;
 }

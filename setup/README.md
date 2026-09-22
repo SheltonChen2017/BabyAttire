@@ -87,6 +87,9 @@ These steps can't be done by the setup script:
 4. **Password page.** Development stores are password protected. The theme's
    password page shows a "coming soon" message with an email signup. Remove the
    password in **Online Store > Preferences** when you launch.
+5. **Collection filters (optional).** Install Shopify's free **Search & Discovery**
+   app and add filters for Size, Color, Product type and Price. They appear on
+   collection and search pages so parents can narrow down to their baby's size.
 
 ## Checking the script
 

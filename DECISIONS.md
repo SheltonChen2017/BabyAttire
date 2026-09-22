@@ -43,6 +43,7 @@ the business. They must match what you actually do.
 | Category collections | Automated by product type: Bodysuit, Sleepwear, Outfit set, Accessory, Gift set | Products > Collections |
 | New arrivals | Products tagged `new`, newest first | Add or remove the `new` tag on products |
 | Collection sort | Best selling, except New arrivals | Each collection in the admin |
+| Collection filters | Size, Color, Product type and Price are recommended, but not set up automatically because the API can't configure them | Search & Discovery app |
 
 ## Store content and layout
 
