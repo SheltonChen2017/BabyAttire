@@ -1436,6 +1436,36 @@
       },
       {
         "type": "header",
+        "content": "Free shipping bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "free_shipping_bar_enable",
+        "label": "Show free shipping progress bar",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping minimum",
+        "info": "Order total needed for free shipping, in your store's main currency. Match this to your shipping rates in Settings > Shipping and delivery.",
+        "default": 50
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_remaining_text",
+        "label": "Message before reaching the minimum",
+        "info": "[amount] is replaced with the amount left to spend.",
+        "default": "You're [amount] away from free shipping"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_unlocked_text",
+        "label": "Message after reaching the minimum",
+        "default": "Yay! Your order ships free"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.cart.settings.cart_drawer.header"
       },
       {

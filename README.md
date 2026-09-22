@@ -13,7 +13,10 @@ free theme, and customized for a baby clothing shop.
 | Homepage | Hero banner, "Shop by age" collections, new arrivals, "Why parents love BabyAttire", gift sets, a parent FAQ and a newsletter signup. |
 | Product page | Size guide link under the size picker, plus "Fabric & care", "Made for little ones" and "Shipping & returns" tabs. |
 | Size guide page | New `size-chart` section with an editable baby size table in pounds, inches, kilograms and centimeters. |
-| Cart | Opens as a side drawer. |
+| Cart | Opens as a side drawer, with a free shipping progress bar and a gift message box. |
+| Footer | Brand blurb, "Shop" and "Help" menus, a contact prompt and a newsletter signup. |
+| Our story page | New `about` page template with the brand story, promises and links to shop. |
+| FAQ page | New `faq` page template with questions on sizing, care, shipping and gifts. |
 
 All text, colors and sections can be changed later in Shopify's theme editor
 without touching code.
@@ -26,15 +29,18 @@ a [Shopify Partners](https://www.shopify.com/partners) account instead.
 
 ## 2. Install the Shopify command-line tool
 
+Install [Node.js](https://nodejs.org) first, then run:
+
 ```bash
-brew tap shopify/shopify
-brew install shopify-cli
+npm install -g @shopify/cli
 ```
+
+On a Mac you can use `brew install shopify-cli` instead.
 
 ## 3. Preview the theme on your store
 
 ```bash
-cd ~/Documents/BabyAttire
+cd C:\git\BabyAttire
 shopify theme dev --store your-store-name.myshopify.com
 ```
 
@@ -71,9 +77,20 @@ Then finish these steps in the Shopify admin:
   Choose the `size-guide` template and make sure its handle is `size-guide`.
 - **Products.** Add products with a **Size** option that uses the same values as
   the size chart, such as Newborn, 0-3M and 3-6M, and a **Color** option if needed.
-- **Menu.** Edit **Online Store > Navigation > Main menu** to link the collections.
+- **Our story and FAQ pages.** Create a page titled "Our story" with the `about`
+  template, and a page titled "FAQ" with the `faq` template. Replace the placeholder
+  story text in the theme editor.
+- **Contact page.** Create a page titled "Contact" with the `contact` template and
+  the handle `contact`. The footer and FAQ page link to it.
+- **Menus.** Edit **Online Store > Navigation > Main menu** to link the collections.
+  The footer's "Shop" column uses the main menu. Its "Help" column uses the
+  **Footer menu**, so add links there to the Size guide, FAQ, Our story, Contact
+  and your policy pages.
+- **Free shipping.** The cart's progress bar is set to $50 in **Theme settings > Cart**.
+  Set up a matching free shipping rate in **Settings > Shipping and delivery**.
 - **Images.** Add a hero image and a logo in the theme editor.
-- **Policies.** The theme mentions free shipping over $50 and 30-day returns.
+- **Policies.** The theme mentions free shipping over $50, 30-day returns and
+  1-2 day order processing (in the announcement bar, homepage and FAQ page).
   Change that text to match your real shipping and return policies before you launch.
 
 ## Updating the theme later

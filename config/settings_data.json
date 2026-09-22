@@ -174,7 +174,11 @@
       "currency_code_enabled": true,
       "cart_type": "drawer",
       "show_vendor": false,
-      "show_cart_note": false,
+      "show_cart_note": true,
+      "free_shipping_bar_enable": true,
+      "free_shipping_threshold": 50,
+      "free_shipping_remaining_text": "You're [amount] away from free shipping",
+      "free_shipping_unlocked_text": "Yay! Your order ships free",
       "cart_drawer_collection": "",
       "cart_color_scheme": "scheme-1",
       "sections": {

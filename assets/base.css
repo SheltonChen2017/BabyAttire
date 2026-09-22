@@ -3635,3 +3635,40 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* BabyAttire: free shipping progress bar (snippets/free-shipping-bar.liquid) */
+.free-shipping-bar {
+  margin: 0 0 2rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--text-boxes-radius);
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.drawer__contents .free-shipping-bar {
+  margin-top: 1rem;
+}
+
+.free-shipping-bar__message {
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.free-shipping-bar__track {
+  height: 0.8rem;
+  border-radius: 0.8rem;
+  background: rgba(var(--color-foreground), 0.1);
+  overflow: hidden;
+}
+
+.free-shipping-bar__fill {
+  height: 100%;
+  max-width: 100%;
+  border-radius: inherit;
+  background: #8fb996;
+  transition: width var(--duration-long) ease;
+}
+
+.free-shipping-bar--unlocked .free-shipping-bar__message {
+  font-weight: 600;
+}

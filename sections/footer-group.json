@@ -4,12 +4,45 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
+        },
+        "shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "help": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help",
+            "menu": "footer"
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Need a hand?",
+            "subtext": "<p>Questions about sizing, gifts or an order? <a href=\"/pages/contact\" title=\"Contact\">Send us a message</a> and we'll get back to you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "shop",
+        "help",
+        "contact"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Get new arrivals in your inbox",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,

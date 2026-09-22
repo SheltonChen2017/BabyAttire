@@ -1,0 +1,37 @@
+{% comment %}
+  BabyAttire free shipping progress bar.
+  Shows how much more the customer needs to spend to get free shipping.
+  Rendered inside the cart drawer and cart page contents, so it refreshes
+  whenever the cart changes.
+
+  The threshold is set in Theme settings > Cart, in the store's main currency.
+  The bar is hidden when the customer shops in a different currency, because
+  the threshold would not match their prices.
+
+  Usage:
+  {% render 'free-shipping-bar' %}
+{% endcomment %}
+
+{%- if settings.free_shipping_bar_enable
+  and settings.free_shipping_threshold > 0
+  and cart != empty
+  and cart.currency.iso_code == shop.currency
+-%}
+  {%- assign threshold = settings.free_shipping_threshold | times: 100 -%}
+  {%- assign remaining = threshold | minus: cart.total_price -%}
+  {%- if remaining > 0 -%}
+    {%- assign percent = cart.total_price | times: 100 | divided_by: threshold -%}
+    {%- assign remaining_money = remaining | money -%}
+    {%- assign message = settings.free_shipping_remaining_text | escape | replace: '[amount]', remaining_money -%}
+  {%- else -%}
+    {%- assign percent = 100 -%}
+    {%- assign message = settings.free_shipping_unlocked_text | escape -%}
+  {%- endif -%}
+
+  <div class="free-shipping-bar{% if remaining <= 0 %} free-shipping-bar--unlocked{% endif %}">
+    <p class="free-shipping-bar__message" role="status">{{ message }}</p>
+    <div class="free-shipping-bar__track" aria-hidden="true">
+      <div class="free-shipping-bar__fill" style="width: {{ percent }}%;"></div>
+    </div>
+  </div>
+{%- endif -%}
