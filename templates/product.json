@@ -60,7 +60,8 @@
             "heading": "Fabric & care",
             "icon": "washing",
             "content": "<p>Soft, breathable cotton. Machine wash cold with like colors and tumble dry low. Do not bleach.</p>",
-            "page": ""
+            "page": "",
+            "product_metafield": "custom.fabric_care"
           }
         },
         "safety": {

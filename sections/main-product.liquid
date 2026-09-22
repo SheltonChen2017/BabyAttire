@@ -224,7 +224,22 @@
                         {{- 'icon-caret.svg' | inline_asset_content -}}
                       </summary>
                       <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                        {{ block.settings.content }}
+                        {%- liquid
+                          assign tab_metafield = null
+                          if block.settings.product_metafield contains '.'
+                            assign metafield_parts = block.settings.product_metafield | strip | split: '.'
+                            assign tab_metafield = product.metafields[metafield_parts[0]][metafield_parts[1]]
+                          endif
+                        -%}
+                        {%- if tab_metafield != blank -%}
+                          {%- if tab_metafield.type == 'rich_text_field' -%}
+                            {{ tab_metafield | metafield_tag }}
+                          {%- else -%}
+                            <p>{{ tab_metafield.value | escape | newline_to_br }}</p>
+                          {%- endif -%}
+                        {%- else -%}
+                          {{ block.settings.content }}
+                        {%- endif -%}
                         {{ block.settings.page.content }}
                       </div>
                     </details>
@@ -1220,6 +1235,12 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        },
+        {
+          "type": "text",
+          "id": "product_metafield",
+          "label": "Product metafield",
+          "info": "Optional, like custom.fabric_care. When a product has this metafield filled in, it replaces the content above for that product."
         }
       ]
     },

@@ -1,0 +1,378 @@
+{
+  "vendor": "BabyAttire",
+  "colors": {
+    "Oat": "#E6D9C3",
+    "Blush": "#F2C4BE",
+    "Sage": "#B9CFB4",
+    "Dusty Blue": "#AFC2DA",
+    "Cloud": "#F6F3EC",
+    "Butter": "#F2E2A2",
+    "Stripe": "#D9C9B8"
+  },
+  "products": [
+    {
+      "handle": "organic-short-sleeve-bodysuit",
+      "title": "Organic Cotton Short-Sleeve Bodysuit",
+      "type": "Bodysuit",
+      "shape": "bodysuit_short",
+      "price": "18.00",
+      "sizes": ["Newborn", "0-3M", "3-6M", "6-12M", "12-18M"],
+      "colors": ["Oat", "Blush", "Sage"],
+      "tags": ["new", "badge:Organic cotton"],
+      "description": "<p>The everyday essential. Soft organic cotton, an envelope neckline that stretches over little heads, and three nickel-free snaps for quick changes.</p>",
+      "fabric_care": "100% organic cotton rib.\nMachine wash cold with like colors. Tumble dry low. Do not bleach."
+    },
+    {
+      "handle": "long-sleeve-envelope-bodysuit",
+      "title": "Long-Sleeve Envelope-Neck Bodysuit",
+      "type": "Bodysuit",
+      "shape": "bodysuit_long",
+      "price": "20.00",
+      "sizes": ["Newborn", "0-3M", "3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Oat", "Dusty Blue"],
+      "tags": ["badge:Organic cotton"],
+      "description": "<p>Long sleeves for cooler days, with fold-over mitten cuffs on newborn to 3-6M sizes to keep tiny nails from scratching.</p>",
+      "fabric_care": "100% organic cotton jersey.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "everyday-bodysuit-3-pack",
+      "title": "Everyday Bodysuit 3-Pack",
+      "type": "Bodysuit",
+      "shape": "bodysuit_stack",
+      "price": "45.00",
+      "compare_at_price": "54.00",
+      "sizes": ["Newborn", "0-3M", "3-6M", "6-12M"],
+      "colors": ["Cloud"],
+      "tags": ["badge:Best value"],
+      "description": "<p>Three short-sleeve bodysuits in cream, oat and sage. The easiest way to stock the drawer.</p>",
+      "fabric_care": "100% organic cotton rib.\nMachine wash cold with like colors. Tumble dry low."
+    },
+    {
+      "handle": "zip-footed-sleeper",
+      "title": "Zip-Up Footed Sleeper",
+      "type": "Sleepwear",
+      "shape": "sleeper",
+      "price": "32.00",
+      "sizes": ["Newborn", "0-3M", "3-6M", "6-12M", "12-18M"],
+      "colors": ["Sage", "Dusty Blue", "Oat"],
+      "tags": ["new", "badge:Two-way zip"],
+      "description": "<p>A two-way zipper means middle-of-the-night diaper changes without fully undressing. Covered feet keep toes warm.</p>",
+      "fabric_care": "95% organic cotton, 5% spandex.\nMachine wash cold. Tumble dry low. Wear snug-fitting for safe sleep."
+    },
+    {
+      "handle": "striped-zip-sleeper",
+      "title": "Striped Zip Sleeper",
+      "type": "Sleepwear",
+      "shape": "sleeper",
+      "price": "34.00",
+      "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Stripe"],
+      "tags": [],
+      "description": "<p>Classic thin stripes, fold-over foot cuffs and a zipper guard at the chin.</p>",
+      "fabric_care": "100% organic cotton.\nMachine wash cold. Tumble dry low. Wear snug-fitting for safe sleep."
+    },
+    {
+      "handle": "knotted-baby-gown",
+      "title": "Knotted Baby Gown",
+      "type": "Sleepwear",
+      "shape": "gown",
+      "price": "26.00",
+      "sizes": ["Newborn", "0-3M"],
+      "colors": ["Cloud", "Blush"],
+      "tags": ["new"],
+      "description": "<p>The newborn-days favorite. An open bottom with a knot tie makes diaper checks easy, and mitten cuffs fold over tiny hands.</p>",
+      "fabric_care": "100% organic cotton jersey.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "muslin-sleep-sack",
+      "title": "Muslin Sleep Sack",
+      "type": "Sleepwear",
+      "shape": "sleep_sack",
+      "price": "38.00",
+      "sizes": ["0-3M", "3-6M", "6-12M"],
+      "colors": ["Oat", "Sage"],
+      "tags": ["badge:Breathable"],
+      "description": "<p>A wearable blanket in airy cotton muslin, so there's nothing loose in the crib. Zips from the bottom up.</p>",
+      "fabric_care": "100% cotton muslin, 2 layers.\nMachine wash cold. Tumble dry low. Gets softer with every wash."
+    },
+    {
+      "handle": "ribbed-top-and-pants-set",
+      "title": "Ribbed Top & Pants Set",
+      "type": "Outfit set",
+      "shape": "set",
+      "price": "36.00",
+      "sizes": ["3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Blush", "Sage", "Oat"],
+      "tags": ["new"],
+      "description": "<p>A long-sleeve top and pull-on pants in stretchy rib. Wide waistband sits comfortably over a diaper.</p>",
+      "fabric_care": "95% organic cotton, 5% spandex rib.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "linen-blend-romper",
+      "title": "Linen-Blend Romper",
+      "type": "Outfit set",
+      "shape": "romper",
+      "price": "34.00",
+      "sizes": ["3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Butter", "Oat"],
+      "tags": ["badge:Summer"],
+      "description": "<p>A breezy one-piece for warm days, with shoulder buttons and snaps at the legs.</p>",
+      "fabric_care": "55% linen, 45% cotton.\nMachine wash cold, gentle cycle. Line dry."
+    },
+    {
+      "handle": "chunky-knit-cardigan",
+      "title": "Chunky Knit Cardigan",
+      "type": "Outfit set",
+      "shape": "cardigan",
+      "price": "38.00",
+      "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Oat", "Dusty Blue"],
+      "tags": [],
+      "description": "<p>A cozy layer with wooden-look buttons. Easy to put on over a bodysuit.</p>",
+      "fabric_care": "100% cotton knit.\nHand wash cold or machine wash on a wool cycle. Lay flat to dry."
+    },
+    {
+      "handle": "pull-on-jogger-pants",
+      "title": "Pull-On Jogger Pants",
+      "type": "Outfit set",
+      "shape": "pants",
+      "price": "22.00",
+      "sizes": ["0-3M", "3-6M", "6-12M", "12-18M", "18-24M"],
+      "colors": ["Oat", "Sage", "Dusty Blue"],
+      "tags": [],
+      "description": "<p>Soft joggers with cuffed ankles that stay put while crawling.</p>",
+      "fabric_care": "100% organic cotton French terry.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "knotted-baby-hat",
+      "title": "Knotted Baby Hat",
+      "type": "Accessory",
+      "shape": "hat",
+      "price": "12.00",
+      "sizes": ["Newborn", "0-3M"],
+      "colors": ["Oat", "Blush", "Sage"],
+      "tags": [],
+      "description": "<p>A soft knotted beanie for the first months. Pairs with the Knotted Baby Gown.</p>",
+      "fabric_care": "100% organic cotton jersey.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "scratch-mittens-2-pack",
+      "title": "Scratch Mittens 2-Pack",
+      "type": "Accessory",
+      "shape": "mittens",
+      "price": "10.00",
+      "sizes": ["Newborn", "0-3M"],
+      "colors": ["Cloud"],
+      "tags": [],
+      "description": "<p>Two pairs of gentle mittens that keep newborns from scratching their faces.</p>",
+      "fabric_care": "100% organic cotton.\nMachine wash cold in a laundry bag. Tumble dry low."
+    },
+    {
+      "handle": "muslin-bandana-bibs-3-pack",
+      "title": "Muslin Bandana Bibs 3-Pack",
+      "type": "Accessory",
+      "shape": "bib",
+      "price": "18.00",
+      "sizes": ["One size"],
+      "colors": ["Blush", "Sage"],
+      "tags": ["new"],
+      "description": "<p>Absorbent muslin bibs for drool and teething. Two snap positions grow with your baby.</p>",
+      "fabric_care": "100% cotton muslin, 4 layers.\nMachine wash warm. Tumble dry low."
+    },
+    {
+      "handle": "grip-socks-3-pack",
+      "title": "Grip Socks 3-Pack",
+      "type": "Accessory",
+      "shape": "socks",
+      "price": "14.00",
+      "sizes": ["6-12M", "12-18M", "18-24M"],
+      "colors": ["Cloud"],
+      "tags": [],
+      "description": "<p>Non-slip grips for first steps and cruising around the furniture.</p>",
+      "fabric_care": "80% cotton, 17% polyester, 3% spandex.\nMachine wash cold. Tumble dry low."
+    },
+    {
+      "handle": "welcome-home-gift-set",
+      "title": "Welcome Home Newborn Gift Set",
+      "type": "Gift set",
+      "shape": "giftbox",
+      "price": "68.00",
+      "sizes": ["Newborn", "0-3M"],
+      "colors": ["Oat", "Blush", "Sage"],
+      "tags": ["badge:Gift ready"],
+      "description": "<p>A knotted gown, matching hat, scratch mittens and a muslin swaddle, packed in a keepsake box with a gift card.</p>",
+      "fabric_care": "Organic cotton jersey and cotton muslin.\nSee each item's label for care."
+    },
+    {
+      "handle": "cozy-nights-gift-set",
+      "title": "Cozy Nights Gift Set",
+      "type": "Gift set",
+      "shape": "giftbox",
+      "price": "75.00",
+      "sizes": ["0-3M", "3-6M", "6-12M"],
+      "colors": ["Dusty Blue", "Sage"],
+      "tags": ["badge:Gift ready"],
+      "description": "<p>A zip-up footed sleeper, a muslin sleep sack and a knotted hat for dreamy bedtimes, in a keepsake box.</p>",
+      "fabric_care": "Organic cotton and cotton muslin.\nSee each item's label for care."
+    },
+    {
+      "handle": "first-birthday-gift-set",
+      "title": "First Birthday Gift Set",
+      "type": "Gift set",
+      "shape": "giftbox",
+      "price": "72.00",
+      "sizes": ["12-18M", "18-24M"],
+      "colors": ["Butter", "Oat"],
+      "tags": ["new", "badge:Gift ready"],
+      "description": "<p>A linen-blend romper, grip socks and a bandana bib for the big day, in a keepsake box.</p>",
+      "fabric_care": "Linen-cotton blend, cotton and muslin.\nSee each item's label for care."
+    }
+  ],
+  "collections": [
+    {
+      "handle": "newborn",
+      "title": "Newborn",
+      "description": "<p>Up to 1 month, or 5-8 lb.</p>",
+      "conditions": [{ "field": "variantTitle", "relation": "CONTAINS", "values": ["Newborn"] }]
+    },
+    {
+      "handle": "0-3-months",
+      "title": "0-3 months",
+      "description": "<p>8-12 lb, 21-24 in.</p>",
+      "conditions": [{ "field": "variantTitle", "relation": "CONTAINS", "values": ["0-3M"] }]
+    },
+    {
+      "handle": "3-6-months",
+      "title": "3-6 months",
+      "description": "<p>12-16 lb, 24-27 in.</p>",
+      "conditions": [{ "field": "variantTitle", "relation": "CONTAINS", "values": ["3-6M"] }]
+    },
+    {
+      "handle": "6-12-months",
+      "title": "6-12 months",
+      "description": "<p>16-24 lb, 27-30 in.</p>",
+      "conditions": [{ "field": "variantTitle", "relation": "CONTAINS", "values": ["6-12M"] }]
+    },
+    {
+      "handle": "12-24-months",
+      "title": "12-24 months",
+      "description": "<p>24-32 lb, 30-34 in.</p>",
+      "conditions": [{ "field": "variantTitle", "relation": "CONTAINS", "values": ["12-18M", "18-24M"] }]
+    },
+    {
+      "handle": "new-arrivals",
+      "title": "New arrivals",
+      "description": "<p>Fresh from the studio.</p>",
+      "sort_order": "CREATED_DESC",
+      "conditions": [{ "field": "productTag", "relation": "TAGGED_WITH", "values": ["new"] }]
+    },
+    {
+      "handle": "gift-sets",
+      "title": "Gift sets",
+      "description": "<p>Ready-to-give bundles in a keepsake box.</p>",
+      "conditions": [{ "field": "productType", "relation": "EQUALS", "values": ["Gift set"] }]
+    },
+    {
+      "handle": "bodysuits",
+      "title": "Bodysuits",
+      "description": "<p>Everyday essentials with easy snaps.</p>",
+      "conditions": [{ "field": "productType", "relation": "EQUALS", "values": ["Bodysuit"] }]
+    },
+    {
+      "handle": "sleepwear",
+      "title": "Sleepwear",
+      "description": "<p>Sleepers, gowns and sleep sacks for cozy nights.</p>",
+      "conditions": [{ "field": "productType", "relation": "EQUALS", "values": ["Sleepwear"] }]
+    },
+    {
+      "handle": "outfits",
+      "title": "Outfits & sets",
+      "description": "<p>Sets, rompers and layers for playtime.</p>",
+      "conditions": [{ "field": "productType", "relation": "EQUALS", "values": ["Outfit set"] }]
+    },
+    {
+      "handle": "accessories",
+      "title": "Accessories",
+      "description": "<p>Hats, mittens, bibs and socks.</p>",
+      "conditions": [{ "field": "productType", "relation": "EQUALS", "values": ["Accessory"] }]
+    }
+  ],
+  "pages": [
+    {
+      "handle": "size-guide",
+      "title": "Size guide",
+      "template": "size-guide",
+      "body": ""
+    },
+    {
+      "handle": "about",
+      "title": "Our story",
+      "template": "about",
+      "body": ""
+    },
+    {
+      "handle": "faq",
+      "title": "FAQ",
+      "template": "faq",
+      "body": "<p>Answers to the questions parents ask us most.</p>"
+    },
+    {
+      "handle": "contact",
+      "title": "Contact",
+      "template": "contact",
+      "body": "<p>Questions about sizing, gifts or an order? Send us a message and we'll get back to you within one business day.</p>"
+    }
+  ],
+  "menus": [
+    {
+      "handle": "main-menu",
+      "title": "Main menu",
+      "items": [
+        {
+          "title": "Shop by age",
+          "type": "COLLECTIONS",
+          "items": [
+            { "title": "Newborn", "collection": "newborn" },
+            { "title": "0-3 months", "collection": "0-3-months" },
+            { "title": "3-6 months", "collection": "3-6-months" },
+            { "title": "6-12 months", "collection": "6-12-months" },
+            { "title": "12-24 months", "collection": "12-24-months" }
+          ]
+        },
+        {
+          "title": "Shop by category",
+          "type": "COLLECTIONS",
+          "items": [
+            { "title": "Bodysuits", "collection": "bodysuits" },
+            { "title": "Sleepwear", "collection": "sleepwear" },
+            { "title": "Outfits & sets", "collection": "outfits" },
+            { "title": "Accessories", "collection": "accessories" }
+          ]
+        },
+        { "title": "New arrivals", "collection": "new-arrivals" },
+        { "title": "Gift sets", "collection": "gift-sets" },
+        { "title": "Size guide", "page": "size-guide" }
+      ]
+    },
+    {
+      "handle": "footer",
+      "title": "Footer menu",
+      "items": [
+        { "title": "Size guide", "page": "size-guide" },
+        { "title": "FAQ", "page": "faq" },
+        { "title": "Our story", "page": "about" },
+        { "title": "Contact", "page": "contact" },
+        { "title": "Shipping policy", "url": "/policies/shipping-policy" },
+        { "title": "Refund policy", "url": "/policies/refund-policy" }
+      ]
+    }
+  ],
+  "policies": {
+    "SHIPPING_POLICY": "<p>Orders ship within 1-2 business days from our warehouse. Standard shipping within the United States takes 3-7 business days.</p><p>Shipping is free on orders over $50. Orders under $50 pay a flat standard rate shown at checkout.</p><p>You'll get a tracking link by email as soon as your order ships.</p>",
+    "REFUND_POLICY": "<p>We accept returns and exchanges of unworn, unwashed items with tags attached within 30 days of delivery.</p><p>To start a return, contact us with your order number. Once we receive and check your return, we'll refund the original payment method within 5 business days.</p><p>For hygiene reasons, opened scratch mittens and socks can't be returned unless they arrived faulty.</p>"
+  },
+  "shop_images": [
+    { "filename": "babyattire-hero.jpg", "alt": "Soft baby clothes laid out on a cream background" },
+    { "filename": "babyattire-story.jpg", "alt": "A stack of folded baby clothes in soft pastel colors" }
+  ]
+}

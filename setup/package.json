@@ -1,0 +1,16 @@
+{
+  "name": "babyattire-setup",
+  "private": true,
+  "type": "module",
+  "description": "Scripts that fill a Shopify store with BabyAttire's sample catalog",
+  "scripts": {
+    "seed": "node seed-store.mjs",
+    "seed:dry-run": "node seed-store.mjs --dry-run",
+    "csv": "node seed-store.mjs --csv",
+    "check": "node check-queries.mjs",
+    "images": "python make_images.py"
+  },
+  "devDependencies": {
+    "graphql": "^16.9.0"
+  }
+}
