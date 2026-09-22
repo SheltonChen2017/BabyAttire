@@ -40,12 +40,14 @@ until you move to a paid plan.
 
 ### 3. Run the setup
 
-In PowerShell, from the repository folder:
+In PowerShell, from the repository folder, run these lines with your own values in
+place of the examples. The store address is the `something.myshopify.com` name
+shown in your Shopify admin, even if you have your own domain.
 
 ```powershell
-$env:SHOPIFY_STORE = "your-store.myshopify.com"
-$env:SHOPIFY_CLIENT_ID = "paste the client ID"
-$env:SHOPIFY_CLIENT_SECRET = "paste the client secret"
+$env:SHOPIFY_STORE = "babyattire-dev.myshopify.com"
+$env:SHOPIFY_CLIENT_ID = "0a1b2c3d4e5f..."
+$env:SHOPIFY_CLIENT_SECRET = "shpss_..."
 node setup/seed-store.mjs
 ```
 

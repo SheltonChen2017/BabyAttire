@@ -253,8 +253,25 @@ async function getToken(store) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({ grant_type: 'client_credentials', client_id: id, client_secret: secret }),
   });
-  if (!res.ok) throw new Error(`Could not get an access token (${res.status}): ${await res.text()}`);
-  return (await res.json()).access_token;
+  if (res.status === 404) {
+    throw new Error(`There is no Shopify store at ${store}. Check SHOPIFY_STORE; it's shown in your admin's address bar.`);
+  }
+  if (!res.ok) {
+    const text = await res.text();
+    const detail = text.trimStart().startsWith('<') ? '' : `: ${text.slice(0, 300)}`;
+    throw new Error(
+      `Shopify rejected the client ID and secret (${res.status})${detail}. Check that they are copied correctly ` +
+        'and that the app is installed on this store.'
+    );
+  }
+  const body = await res.json().catch(() => null);
+  if (!body?.access_token) {
+    throw new Error(
+      `${store} did not return an access token. Check that SHOPIFY_STORE is your store's .myshopify.com ` +
+        'address and that the app is installed on that store.'
+    );
+  }
+  return body.access_token;
 }
 
 function client(store, token) {
@@ -266,13 +283,17 @@ function client(store, token) {
     });
     const throttled = res.status === 429;
     const body = throttled ? null : await res.json().catch(() => null);
-    if (throttled || body?.errors?.some((e) => e.extensions?.code === 'THROTTLED')) {
+    if (throttled || (Array.isArray(body?.errors) && body.errors.some((e) => e.extensions?.code === 'THROTTLED'))) {
       if (attempt > 6) throw new Error('Shopify kept throttling requests; try again in a minute.');
       await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));
       return gql(query, variables, attempt + 1);
     }
+    if (res.ok && !body) {
+      throw new Error(`${store} answered with a web page instead of API data. Check SHOPIFY_STORE.`);
+    }
     if (!res.ok || body?.errors) {
-      const detail = body?.errors ? JSON.stringify(body.errors) : res.statusText;
+      const detail = typeof body?.errors === 'string' ? body.errors : body?.errors ? JSON.stringify(body.errors) : res.statusText;
+      if (res.status === 404) throw new Error(`There is no Shopify store at ${store}. Check SHOPIFY_STORE.`);
       if (res.status === 401 || res.status === 403) {
         throw new Error(`Shopify refused the request (${res.status}). Check the token and app scopes: ${detail}`);
       }
@@ -545,7 +566,23 @@ async function main() {
   let gql = null;
   if (!dry) {
     const store = (process.env.SHOPIFY_STORE || '').replace(/^https?:\/\//, '').replace(/\/.*$/, '');
-    if (!store.endsWith('.myshopify.com')) throw new Error('Set SHOPIFY_STORE to your-store.myshopify.com');
+    if (!store.endsWith('.myshopify.com')) {
+      throw new Error("Set SHOPIFY_STORE to your store's address, like babyattire-dev.myshopify.com");
+    }
+    const placeholders = {
+      SHOPIFY_STORE: ['your-store.myshopify.com', 'babyattire-dev.myshopify.com'].includes(store),
+      SHOPIFY_ADMIN_TOKEN: /\.\.\.$/.test(process.env.SHOPIFY_ADMIN_TOKEN ?? 'unset'),
+      SHOPIFY_CLIENT_ID: /\.\.\.$/.test(process.env.SHOPIFY_CLIENT_ID ?? 'unset'),
+      SHOPIFY_CLIENT_SECRET: /\.\.\.$/.test(process.env.SHOPIFY_CLIENT_SECRET ?? 'unset'),
+    };
+    const unfilled = Object.keys(placeholders).filter((k) => placeholders[k]);
+    if (unfilled.length) {
+      throw new Error(
+        `${unfilled.join(', ')} ${unfilled.length > 1 ? 'still have their example values' : 'still has its example value'} from the instructions. ` +
+          `Replace ${unfilled.length > 1 ? 'them' : 'it'} with your store's real details.` +
+          " See setup/README.md, steps 1-3."
+      );
+    }
     gql = client(store, await getToken(store));
     console.log(`Setting up ${store} (Admin API ${API_VERSION})`);
   } else {
@@ -579,6 +616,6 @@ async function main() {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((err) => {
     console.error(`\nSetup stopped: ${err.message}`);
-    process.exit(1);
+    process.exitCode = 1;
   });
 }
